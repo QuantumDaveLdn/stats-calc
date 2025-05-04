@@ -1,0 +1,29 @@
+# OS stuff
+.DS_Store
+Thumbs.db
+
+# Node packages folder (if libraries are installed via npm)
+# This is the default location for npm packages
+node_modules/
+
+# Log files
+npm-debug.log*
+yarn-error.log
+
+# Environment variables
+.env
+.env.*
+
+# Build output folders
+dist/
+build/
+*.out
+
+# Editor/IDE config files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw? # Vim swap files
