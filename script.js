@@ -57,40 +57,55 @@ const calculate = () => {
   const array = value.split(/,\s*/g);
   const numbers = array.map(el => Number(el)).filter(el => !isNaN(el));
 
+  
   if (numbers.length === 0) {
+    
     document.querySelector("#mean").textContent = '-';
     document.querySelector("#median").textContent = '-';
     document.querySelector("#mode").textContent = '-';
     document.querySelector("#range").textContent = '-';
     document.querySelector("#variance").textContent = '-';
     document.querySelector("#standardDeviation").textContent = '-';
+  } else {
+    
+    const mean = getMean(numbers);
+    const median = getMedian(numbers);
+    const mode = getMode(numbers);
+    const range = getRange(numbers);
+    const variance = getVariance(numbers);
+    const standardDeviation = getStandardDeviation(numbers);
+
+    document.querySelector("#mean").textContent = formatNumber(mean);
+    document.querySelector("#median").textContent = formatNumber(median);
+    document.querySelector("#mode").textContent = mode; 
+    document.querySelector("#range").textContent = formatNumber(range);
+    document.querySelector("#variance").textContent = formatNumber(variance);
+    document.querySelector("#standardDeviation").textContent = formatNumber(standardDeviation);
   }
-
-  const mean = getMean(numbers);
-  const median = getMedian(numbers);
-  const mode = getMode(numbers);
-  const range = getRange(numbers);
-  const variance = getVariance(numbers);
-  const standardDeviation = getStandardDeviation(numbers);
-
-
-  document.querySelector("#mean").textContent = mean;
-  document.querySelector("#median").textContent = median;
-  document.querySelector("#mode").textContent = mode;
-  document.querySelector("#range").textContent = range;
-  document.querySelector("#variance").textContent = variance;
-  document.querySelector("#standardDeviation").textContent = standardDeviation;
-
 };
 
-document.querySelector("#numbers").addEventListener('input', () => {
-    if (document.querySelector("#numbers").value.trim() === '') {
-        document.querySelector("#mean").textContent = '-';
-        document.querySelector("#median").textContent = '-';
-        document.querySelector("#mode").textContent = '-';
-        document.querySelector("#range").textContent = '-';
-        document.querySelector("#variance").textContent = '-';
-        document.querySelector("#standardDeviation").textContent = '-';
-    }
+document.addEventListener('DOMContentLoaded', () => { 
+  const form = document.querySelector('form'); 
+  if (form) { 
+       form.addEventListener('submit', (event) => {
+          event.preventDefault(); 
+          calculate(); 
+      });
+  }
+
+  
+  const numbersInput = document.querySelector("#numbers");
+   if(numbersInput) {
+      numbersInput.addEventListener('input', () => {
+           if (numbersInput.value.trim() === '') {
+              document.querySelector("#mean").textContent = '-';
+              document.querySelector("#median").textContent = '-';
+              document.querySelector("#mode").textContent = '-';
+              document.querySelector("#range").textContent = '-';
+              document.querySelector("#variance").textContent = '-';
+              document.querySelector("#standardDeviation").textContent = '-';
+          }
+      });
+  }
 });
 
