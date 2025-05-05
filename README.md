@@ -14,10 +14,21 @@ Calculates the following statistics:
 
 ## How to Use
 
-1.  Open the `index.html` file in your web browser.
-2.  Enter a list of numbers separated by commas (e.g., `1, 5, 2, 8, 5, 10`) into the input field.
-3.  Click the "Calculate" button.
-4.  The calculated statistics will be displayed below the form.
+1.  Enter a list of numbers separated by commas (e.g., `1, 5, 2, 8, 5, 10`) into the input field.
+2.  Click the "Calculate" button.
+3.  The calculated statistics will be displayed below the form.
+
+## How to View Projects
+
+Each project can be viewed by:
+
+Cloning this repository
+Navigating to the specific project folder
+Opening the index.html file in your browser
+
+OR
+
+Visit the GitHub Pages site at: [https://quantumdaveldn.github.io/stats-calc/](https://quantumdaveldn.github.io/stats-calc/)
 
 ## Technologies Used
 
@@ -27,10 +38,15 @@ Calculates the following statistics:
 
 ## Project Structure
 ├── index.html       # Main HTML file
+
 ├── styles.css       # CSS for styling
+
 ├── script.js        # JavaScript for calculations
+
 ├── README.md        # This file
-└── LICENSE          # Project License (e.g., MIT)
+
+└── LICENSE          # Project License
+
 └── .gitignore       # Specifies files for Git to ignore
 
 ## Future Improvements (Ideas)
